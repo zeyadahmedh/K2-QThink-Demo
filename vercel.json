@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "api/app.py",
@@ -11,16 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/api/chat",
-      "dest": "/api/app"
+      "src": "/api/(.*)",
+      "dest": "api/app.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/app"
+      "dest": "/static/$1"
     }
   ]
 }
